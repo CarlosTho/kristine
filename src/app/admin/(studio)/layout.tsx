@@ -24,7 +24,8 @@ export default async function StudioLayout({
           <div className="flex items-center justify-between gap-3">
             <Link
               href="/"
-              className="btn rounded-full bg-[var(--cream)] px-4 py-2.5 text-xs font-medium text-black no-underline hover:bg-white"
+              className="btn rounded-full bg-[var(--cream)] px-4 py-2.5 text-xs font-medium no-underline hover:bg-white !text-black"
+              style={{ color: "#000" }}
             >
               Home
             </Link>
