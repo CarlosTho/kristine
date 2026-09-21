@@ -61,7 +61,7 @@ export default async function RootLayout({
           </div>
         </div>
         <SiteHeader name={site.displayName} isAdmin={admin} />
-        <main className="relative z-10 flex-1">{children}</main>
+        <main className="relative z-10 min-w-0 flex-1 overflow-x-clip">{children}</main>
         <SiteFooter name={site.displayName} isAdmin={admin} closingNote={site.closingNote} />
       </body>
     </html>

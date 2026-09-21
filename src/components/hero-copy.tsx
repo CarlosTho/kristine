@@ -45,7 +45,7 @@ export function HeroCopy({
         <p className="rise text-lg font-medium tracking-[0.12em] uppercase text-[var(--brass-deep)] md:text-2xl">
           {welcomeLine}
         </p>
-        <h1 className="rise rise-2 mt-3 font-display text-[clamp(2.15rem,11vw,6.5rem)] leading-[0.9] tracking-[-0.045em] md:mt-4">
+        <h1 className="rise rise-2 mt-3 min-w-0 font-display text-[clamp(2.15rem,11vw,6.5rem)] leading-[0.9] tracking-[-0.045em] break-words md:mt-4">
           <TitleLine title={titleLine} accent={accentWord} />
         </h1>
         <p className="rise rise-3 mt-5 max-w-xl text-base leading-7 text-[var(--muted)] md:mt-6 md:text-lg md:leading-8">
@@ -100,7 +100,6 @@ export function HeroCopy({
           value={welcome}
           onChange={(event) => setWelcome(event.target.value)}
           className="field rounded-xl border border-[var(--line)] bg-white px-4 py-3 text-base"
-          maxLength={80}
         />
       </label>
       <label className="grid gap-1 text-sm">
@@ -109,7 +108,6 @@ export function HeroCopy({
           value={title}
           onChange={(event) => setTitle(event.target.value)}
           className="field rounded-xl border border-[var(--line)] bg-white px-4 py-3 font-display text-xl"
-          maxLength={160}
         />
       </label>
       <label className="grid gap-1 text-sm">
@@ -118,7 +116,6 @@ export function HeroCopy({
           value={accent}
           onChange={(event) => setAccent(event.target.value)}
           className="field rounded-xl border border-[var(--line)] bg-white px-4 py-3 text-base"
-          maxLength={80}
         />
       </label>
       <label className="grid gap-1 text-sm">
@@ -128,7 +125,6 @@ export function HeroCopy({
           onChange={(event) => setLine(event.target.value)}
           rows={3}
           className="field rounded-xl border border-[var(--line)] bg-white px-4 py-3 text-base"
-          maxLength={280}
         />
       </label>
       {message ? <p className="text-sm text-[#8f3d34]">{message}</p> : null}

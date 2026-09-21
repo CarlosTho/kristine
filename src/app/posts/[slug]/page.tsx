@@ -54,7 +54,6 @@ export default async function PostPage({ params }: Props) {
     day: "numeric",
     year: "numeric",
   });
-  const firstParagraphId = data.sections.find((section) => section.type === "paragraph")?.id;
 
   return (
     <>
@@ -66,32 +65,33 @@ export default async function PostPage({ params }: Props) {
         ])}
       />
       <ReadingProgress />
-      <SiteShell as="article" className="max-w-3xl py-8 md:py-12">
+      <SiteShell>
+      <article className="mx-auto flex w-full min-w-0 max-w-2xl flex-col items-center py-8 text-center md:py-12">
         <Link href="/" className="nav-link rise inline-block">
           ← Blog
         </Link>
-        <div className="note-meta rise rise-2 mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs tracking-[0.14em] uppercase text-[var(--muted)] md:mt-8">
+        <div className="note-meta rise rise-2 mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs tracking-[0.14em] uppercase text-[var(--muted)] md:mt-8">
           <span>{data.post.category}</span>
           <span aria-hidden="true">·</span>
           <span>{published}</span>
         </div>
-        <h1 className="rise rise-2 mt-5 max-w-[18ch] font-display text-4xl leading-[0.95] italic md:mt-6 md:text-7xl md:leading-[0.9]">
+        <h1 className="rise rise-2 mx-auto mt-5 w-full min-w-0 max-w-[18ch] text-center font-display text-5xl leading-[0.95] break-words italic md:mt-6 md:max-w-[22ch] md:text-7xl md:leading-[0.9]">
           {data.post.title}
         </h1>
-        <p className="rise rise-3 mt-5 border-l-2 border-[var(--brass)] pl-4 text-base italic leading-7 text-[var(--muted)] md:text-lg md:leading-8">
+        <p className="rise rise-3 mx-auto mt-5 w-full max-w-xl text-2xl italic leading-10 break-words [overflow-wrap:anywhere] text-[var(--muted)] md:text-[1.5rem] md:leading-[2.6rem]">
           {data.post.excerpt}
         </p>
         {data.post.coverPath ? (
-          <div className="post-photo media-frame rise rise-4 mt-8 rounded-2xl md:-rotate-1">
+          <div className="post-photo media-frame rise rise-4 mx-auto mt-8 rounded-2xl md:-rotate-1">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={data.post.coverPath} alt={`Cover for ${data.post.title}`} />
           </div>
         ) : null}
-        <div className="mt-8 space-y-7 md:mt-12">
+        <div className="mt-8 w-full space-y-7 md:mt-12">
           {data.sections.map((section) => {
             if (section.type === "heading") {
               return (
-                <h2 key={section.id} className="pt-4 font-display text-2xl italic md:text-3xl">
+                <h2 key={section.id} className="pt-4 font-display text-3xl break-words italic md:text-4xl">
                   {section.content}
                 </h2>
               );
@@ -100,9 +100,9 @@ export default async function PostPage({ params }: Props) {
               return (
                 <blockquote
                   key={section.id}
-                  className="quote-block relative bg-[var(--navy)] px-4 py-6 font-display text-xl leading-snug text-[var(--cream)] md:px-6 md:py-7 md:text-2xl"
+                  className="quote-block relative bg-[var(--navy)] px-4 py-6 text-center font-display text-2xl leading-snug break-words text-[var(--cream)] md:px-6 md:py-7 md:text-3xl"
                 >
-                  <span className="absolute -top-3 left-5 font-display text-5xl italic text-[var(--brass)]">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 font-display text-5xl italic text-[var(--brass)]">
                     “
                   </span>
                   {section.content}
@@ -112,7 +112,7 @@ export default async function PostPage({ params }: Props) {
             if (section.type === "image" && section.imagePath) {
               return (
                 <figure key={section.id} className="grid gap-2">
-                  <div className="post-photo media-frame overflow-hidden rounded-2xl">
+                  <div className="post-photo media-frame mx-auto overflow-hidden rounded-2xl">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={section.imagePath} alt={section.content || ""} />
                   </div>
@@ -124,15 +124,10 @@ export default async function PostPage({ params }: Props) {
                 </figure>
               );
             }
-            const drop = section.id === firstParagraphId;
             return (
               <p
                 key={section.id}
-                className={
-                  drop
-                    ? "text-base leading-7 whitespace-pre-wrap first-letter:float-left first-letter:mr-3 first-letter:font-display first-letter:text-5xl first-letter:leading-[0.75] first-letter:text-[var(--brass-deep)] md:text-lg md:leading-8 md:first-letter:text-7xl"
-                    : "text-base leading-7 whitespace-pre-wrap md:text-lg md:leading-8"
-                }
+                className="mx-auto w-full max-w-xl text-center text-2xl leading-10 whitespace-pre-wrap break-words [overflow-wrap:anywhere] md:text-[1.5rem] md:leading-[2.6rem]"
               >
                 {section.content}
               </p>
@@ -140,7 +135,7 @@ export default async function PostPage({ params }: Props) {
           })}
         </div>
         {related.length > 0 ? (
-          <nav aria-label="More notes" className="mt-14 border-t border-[var(--line)] pt-8 md:mt-16">
+          <nav aria-label="More notes" className="mt-14 w-full border-t border-[var(--line)] pt-8 text-center md:mt-16">
             <p className="kicker">More notes</p>
             <ul className="mt-4 grid gap-3">
               {related.map((post) => (
@@ -154,6 +149,7 @@ export default async function PostPage({ params }: Props) {
             </ul>
           </nav>
         ) : null}
+      </article>
       </SiteShell>
     </>
   );

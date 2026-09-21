@@ -12,33 +12,33 @@ const imagePath = z
 export const sectionSchema = z.discriminatedUnion("type", [
   z.object({
     type: z.literal("heading"),
-    content: z.string().transform((v) => asPlainText(v, 180)).pipe(z.string().min(1, "Fill in this heading, or remove it.").max(180)),
+    content: z.string().transform((v) => asPlainText(v)).pipe(z.string().min(1, "Fill in this heading, or remove it.")),
     imagePath: z.null().optional(),
   }),
   z.object({
     type: z.literal("paragraph"),
     content: z
       .string()
-      .transform((v) => asMultilineText(v, 12_000))
-      .pipe(z.string().min(1, "Fill in this text section, or remove it.").max(12_000)),
+      .transform((v) => asMultilineText(v))
+      .pipe(z.string().min(1, "Fill in this text section, or remove it.")),
     imagePath: z.null().optional(),
   }),
   z.object({
     type: z.literal("quote"),
-    content: z.string().transform((v) => asMultilineText(v, 800)).pipe(z.string().min(1, "Fill in this quote, or remove it.").max(800)),
+    content: z.string().transform((v) => asMultilineText(v)).pipe(z.string().min(1, "Fill in this quote, or remove it.")),
     imagePath: z.null().optional(),
   }),
   z.object({
     type: z.literal("image"),
-    content: z.string().transform((v) => asPlainText(v, 160)).pipe(z.string().max(160)),
+    content: z.string().transform((v) => asPlainText(v)),
     imagePath: z.string().refine(isSafeUploadPath, "Invalid image path"),
   }),
 ]);
 
 export const postInputSchema = z.object({
   id: z.string().uuid().optional(),
-  title: z.string().transform((v) => asPlainText(v, 140)).pipe(z.string().min(1, "Add a title.").max(140)),
-  excerpt: z.string().transform((v) => asPlainText(v, 280)).pipe(z.string().min(8, "Add a short summary (at least 8 characters).").max(280)),
+  title: z.string().transform((v) => asPlainText(v)).pipe(z.string().min(1, "Add a title.")),
+  excerpt: z.string().transform((v) => asPlainText(v)),
   category: z.enum(CATEGORIES),
   coverPath: imagePath,
   published: z.boolean(),
@@ -51,14 +51,14 @@ export const loginSchema = z.object({
 });
 
 export const profileSchema = z.object({
-  displayName: z.string().transform((v) => asPlainText(v, 80)).pipe(z.string().min(2).max(80)),
-  tagline: z.string().transform((v) => asPlainText(v, 280)).pipe(z.string().min(4).max(280)),
-  bio: z.string().transform((v) => asMultilineText(v, 2000)).pipe(z.string().min(20).max(2000)),
+  displayName: z.string().transform((v) => asPlainText(v)).pipe(z.string().min(1, "Add a name.")),
+  tagline: z.string().transform((v) => asPlainText(v)),
+  bio: z.string().transform((v) => asMultilineText(v)),
   portraitPath: imagePath,
-  welcomeLine: z.string().transform((v) => asPlainText(v, 80)).pipe(z.string().min(2).max(80)),
-  titleLine: z.string().transform((v) => asPlainText(v, 160)).pipe(z.string().min(2).max(160)),
-  accentWord: z.string().transform((v) => asPlainText(v, 80)).pipe(z.string().max(80)),
-  closingNote: z.string().transform((v) => asMultilineText(v, 800)).pipe(z.string().min(8).max(800)),
+  welcomeLine: z.string().transform((v) => asPlainText(v)),
+  titleLine: z.string().transform((v) => asPlainText(v)),
+  accentWord: z.string().transform((v) => asPlainText(v)),
+  closingNote: z.string().transform((v) => asMultilineText(v)),
 });
 
 export const heroCopySchema = profileSchema.pick({

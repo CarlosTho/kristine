@@ -9,12 +9,14 @@ export function SiteHeader({ name, isAdmin }: { name: string; isAdmin: boolean }
 
   return (
     <header className="sticky top-0 z-40 bg-[var(--cream)]">
-      <SiteShell className="flex items-center justify-between gap-3 py-3 md:gap-6 md:py-4">
-        <Link href="/" className="brand-mark no-underline leading-none">
+      <SiteShell className="flex min-w-0 items-center justify-between gap-2 py-3 md:gap-6 md:py-4">
+        <Link href="/" className="brand-mark min-w-0 no-underline leading-none">
           <p className="kicker mb-0.5">Blog</p>
-          <span className="font-display text-[1.55rem] italic tracking-tight sm:text-2xl md:text-3xl">{name}</span>
+          <span className="block truncate font-display text-xl italic tracking-tight sm:text-2xl md:text-3xl">
+            {name}
+          </span>
         </Link>
-        <nav className="flex shrink-0 items-center justify-end gap-4 md:gap-6" aria-label="Primary">
+        <nav className="flex shrink-0 items-center justify-end gap-3 text-sm md:gap-6 md:text-base" aria-label="Primary">
           <Link href="/" className="nav-link" aria-current={pathname === "/" ? "page" : undefined}>
             Blog
           </Link>
@@ -28,7 +30,7 @@ export function SiteHeader({ name, isAdmin }: { name: string; isAdmin: boolean }
           {isAdmin ? (
             <Link
               href="/admin"
-              className="btn btn-primary rounded-full px-4 py-2 text-sm no-underline"
+              className="btn btn-primary rounded-full px-3 py-1.5 text-xs no-underline md:px-4 md:py-2 md:text-sm"
               aria-current={pathname.startsWith("/admin") && !pathname.includes("/login") ? "page" : undefined}
             >
               Dashboard

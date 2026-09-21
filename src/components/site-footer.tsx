@@ -45,7 +45,6 @@ export function SiteFooter({
             onChange={(event) => setNote(event.target.value)}
             rows={4}
             className="field rounded-xl border border-[var(--line)] bg-white px-4 py-3 text-base text-[var(--ink)]"
-            maxLength={800}
           />
           {message ? <p className="text-sm text-[#8f3d34]">{message}</p> : null}
           <div className="flex flex-wrap gap-2">

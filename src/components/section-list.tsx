@@ -147,7 +147,6 @@ function SectionFields({
           value={section.content}
           onChange={(event) => onUpdate(section.key, { content: event.target.value })}
           placeholder="Optional caption"
-          maxLength={160}
           className="rounded-xl border border-[var(--line)] px-4 py-3"
         />
       </div>
@@ -160,7 +159,6 @@ function SectionFields({
         value={section.content}
         onChange={(event) => onUpdate(section.key, { content: event.target.value })}
         rows={2}
-        maxLength={140}
         placeholder="What is this note called?"
         className="w-full resize-none bg-transparent font-display text-4xl leading-tight outline-none"
       />
@@ -182,7 +180,6 @@ function SectionFields({
       value={section.content}
       onChange={(event) => onUpdate(section.key, { content: event.target.value })}
       rows={rows}
-      maxLength={section.type === "excerpt" ? 280 : undefined}
       placeholder={placeholder}
       className="w-full rounded-xl border border-[var(--line)] px-4 py-3"
     />

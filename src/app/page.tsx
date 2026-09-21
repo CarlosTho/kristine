@@ -21,7 +21,7 @@ export default async function HomePage() {
 
   return (
     <SiteShell className="pt-8 pb-10 md:pt-10 md:pb-12">
-      <section className="grid items-center gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.85fr)] md:gap-8">
+      <section className="grid min-w-0 items-center gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.85fr)] md:gap-8">
         <div className="order-2 md:order-1">
           <HeroCopy
             isAdmin={admin}
@@ -47,7 +47,7 @@ export default async function HomePage() {
             </a>
           </div>
         </div>
-        <div className="order-1 mx-auto w-full max-w-[13.5rem] sm:max-w-xs md:order-2 md:max-w-sm">
+        <div className="order-1 mx-auto w-full min-w-0 max-w-[13.5rem] overflow-hidden sm:max-w-xs md:order-2 md:max-w-sm">
           <div className="relative">
             <div
               aria-hidden="true"
@@ -62,7 +62,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section id="notes" className="mt-16 scroll-mt-28 md:mt-28 md:scroll-mt-32">
+      <section id="notes" className="mt-16 min-w-0 scroll-mt-28 md:mt-28 md:scroll-mt-32">
         <div className="mb-6 flex items-end justify-between gap-4 border-b border-[var(--line)] pb-3 md:mb-8 md:pb-4">
           <h2 className="font-display text-3xl italic md:text-4xl">My blog</h2>
           <p className="text-xs tracking-[0.14em] uppercase text-[var(--muted)] md:text-sm">
@@ -74,7 +74,7 @@ export default async function HomePage() {
             Nothing published yet.
           </p>
         ) : (
-          <div className="grid gap-6 md:gap-8">
+          <div className="grid min-w-0 gap-6 md:gap-8">
             {featured ? <PostCard post={featured} index={0} variant="feature" /> : null}
             <div className="grid gap-4 md:gap-5">
               {rest.map((post, index) => (

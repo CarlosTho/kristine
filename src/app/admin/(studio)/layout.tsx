@@ -3,6 +3,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { readSession } from "@/lib/auth";
 import { logoutAction } from "@/lib/actions";
+import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
@@ -19,7 +20,7 @@ export default async function StudioLayout({
   return (
     <div>
       <div className="border-b border-[var(--line)] bg-[var(--navy)] text-[var(--cream)]">
-        <div className="site-shell ml-[3.75rem] mr-4 w-[min(1120px,calc(100%-4.75rem))] md:ml-[5.75rem] md:mr-8 md:w-[min(1120px,calc(100%-7.75rem))] flex flex-wrap items-center justify-between gap-3 py-3 text-sm">
+        <SiteShell className="flex flex-wrap items-center justify-between gap-3 py-3 text-sm">
           <p className="tracking-[0.18em] uppercase text-xs">Studio</p>
           <nav className="flex flex-wrap items-center gap-3 md:gap-4">
             <Link href="/admin" className="no-underline opacity-90 hover:opacity-100">
@@ -37,7 +38,7 @@ export default async function StudioLayout({
               </button>
             </form>
           </nav>
-        </div>
+        </SiteShell>
       </div>
       {children}
     </div>

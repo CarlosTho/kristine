@@ -62,7 +62,6 @@ export function ProfileForm({
           value={name}
           onChange={(event) => setName(event.target.value)}
           className="rounded-xl border border-[var(--line)] px-4 py-3"
-          maxLength={80}
         />
       </label>
       <label className="grid gap-2 text-sm">
@@ -71,7 +70,6 @@ export function ProfileForm({
           value={welcome}
           onChange={(event) => setWelcome(event.target.value)}
           className="rounded-xl border border-[var(--line)] px-4 py-3"
-          maxLength={80}
         />
       </label>
       <label className="grid gap-2 text-sm">
@@ -80,7 +78,6 @@ export function ProfileForm({
           value={title}
           onChange={(event) => setTitle(event.target.value)}
           className="rounded-xl border border-[var(--line)] px-4 py-3"
-          maxLength={160}
         />
       </label>
       <label className="grid gap-2 text-sm">
@@ -89,7 +86,6 @@ export function ProfileForm({
           value={accent}
           onChange={(event) => setAccent(event.target.value)}
           className="rounded-xl border border-[var(--line)] px-4 py-3"
-          maxLength={80}
         />
       </label>
       <label className="grid gap-2 text-sm">
@@ -98,7 +94,6 @@ export function ProfileForm({
           value={line}
           onChange={(event) => setLine(event.target.value)}
           className="rounded-xl border border-[var(--line)] px-4 py-3"
-          maxLength={280}
         />
       </label>
       <label className="grid gap-2 text-sm">
@@ -108,7 +103,6 @@ export function ProfileForm({
           onChange={(event) => setAbout(event.target.value)}
           rows={8}
           className="rounded-xl border border-[var(--line)] px-4 py-3"
-          maxLength={2000}
         />
       </label>
       <label className="grid gap-2 text-sm">
@@ -118,7 +112,6 @@ export function ProfileForm({
           onChange={(event) => setNote(event.target.value)}
           rows={4}
           className="rounded-xl border border-[var(--line)] px-4 py-3"
-          maxLength={800}
         />
       </label>
       {message ? <p className="text-sm">{message}</p> : null}

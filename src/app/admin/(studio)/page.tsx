@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { listAllPosts } from "@/lib/queries";
 import { DeletePostButton } from "@/components/delete-post-button";
+import { SiteShell } from "@/components/site-shell";
 
 export default async function StudioHomePage() {
   const posts = await listAllPosts();
 
   return (
-    <div className="site-shell ml-[3.75rem] mr-4 w-[min(1120px,calc(100%-4.75rem))] py-8 md:ml-[5.75rem] md:mr-8 md:w-[min(1120px,calc(100%-7.75rem))] md:py-10">
+    <SiteShell className="py-8 md:py-10">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="kicker">Compose</p>
@@ -40,6 +41,6 @@ export default async function StudioHomePage() {
           </li>
         ))}
       </ul>
-    </div>
+    </SiteShell>
   );
 }
