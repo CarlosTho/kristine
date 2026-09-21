@@ -48,7 +48,7 @@ export default async function HomePage() {
           </div>
           <p className="rise rise-4 mt-5 max-w-xl text-base leading-7 text-[var(--muted)] md:text-lg">
             Click{" "}
-            <a href="/about" className="font-medium text-[#2f6f8f] underline decoration-[#2f6f8f] underline-offset-4">
+            <a href="/about" className="about-here font-medium text-[#2f6f8f] underline decoration-[#2f6f8f] underline-offset-4">
               here
             </a>{" "}
             to learn a little more about me!
@@ -65,7 +65,7 @@ export default async function HomePage() {
 
       <section id="notes" className="mt-16 min-w-0 scroll-mt-28 md:mt-28 md:scroll-mt-32">
         <div className="mb-6 flex items-end justify-between gap-4 border-b border-[var(--line)] pb-3 md:mb-8 md:pb-4">
-          <h2 className="font-display text-3xl italic md:text-4xl">My blog</h2>
+          <h2 className="title-ink font-display text-3xl italic md:text-4xl">My blog</h2>
           <p className="text-xs tracking-[0.14em] uppercase text-[var(--muted)] md:text-sm">
             {String(posts.length).padStart(2, "0")} posts
           </p>

@@ -8,6 +8,7 @@ import { JsonLd } from "@/components/json-ld";
 import { rootMetadata } from "@/lib/seo";
 import { websiteGraph } from "@/lib/structured-data";
 import "./globals.css";
+import "./motion.css";
 
 const display = Instrument_Serif({
   variable: "--font-display-face",

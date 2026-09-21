@@ -3,6 +3,7 @@
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { saveHeroCopyAction } from "@/lib/actions";
+import { useTypedText } from "@/components/type-line";
 
 function TitleLine({ title, accent }: { title: string; accent: string }) {
   if (!accent) return title;
@@ -38,6 +39,7 @@ export function HeroCopy({
   const [title, setTitle] = useState(titleLine);
   const [accent, setAccent] = useState(accentWord);
   const [line, setLine] = useState(tagline);
+  const typedTitle = useTypedText(titleLine, 70);
 
   if (!isAdmin || !editing) {
     return (
@@ -45,8 +47,12 @@ export function HeroCopy({
         <p className="rise text-lg font-medium tracking-[0.12em] uppercase text-[var(--brass-deep)] md:text-2xl">
           {welcomeLine}
         </p>
-        <h1 className="rise rise-2 mt-3 min-w-0 font-display text-[clamp(2.15rem,11vw,6.5rem)] leading-[0.9] tracking-[-0.045em] break-words md:mt-4">
-          <TitleLine title={titleLine} accent={accentWord} />
+        <h1 className="mt-3 min-w-0 font-display text-[clamp(2.15rem,11vw,6.5rem)] leading-[0.9] tracking-[-0.045em] break-words md:mt-4">
+          <span className="sr-only">{titleLine}</span>
+          <span aria-hidden="true">
+            <TitleLine title={typedTitle} accent={accentWord} />
+            <span className="type-caret" />
+          </span>
         </h1>
         <p className="rise rise-3 mt-5 max-w-xl text-base leading-7 text-[var(--muted)] md:mt-6 md:text-lg md:leading-8">
           {tagline}

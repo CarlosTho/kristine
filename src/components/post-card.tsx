@@ -21,6 +21,7 @@ export function PostCard({
       <Link
         href={`/posts/${post.slug}`}
         className="post-card rise grid min-w-0 grid-cols-[2.2rem_minmax(0,1fr)] items-start gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-4 no-underline sm:grid-cols-[3.4rem_minmax(0,1fr)_auto] sm:items-center sm:gap-4 sm:px-5 sm:py-5"
+        style={{ animationDelay: `${0.12 + index * 0.08}s` }}
       >
         <span className="font-display text-2xl italic text-[var(--brass-deep)]">{number}</span>
         <div className="min-w-0">
@@ -39,6 +40,7 @@ export function PostCard({
     <Link
       href={`/posts/${post.slug}`}
       className="post-card rise grid min-w-0 gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 shadow-[var(--shadow)] no-underline md:grid-cols-2 md:gap-4 md:rounded-3xl md:p-4"
+      style={{ animationDelay: `${0.08 + index * 0.08}s` }}
     >
       <div className="media-frame min-h-44 rounded-2xl md:min-h-56">
         {post.coverPath ? (

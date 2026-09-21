@@ -10,7 +10,7 @@ export function Portrait({
   const initial = name.trim().charAt(0).toUpperCase() || "K";
 
   return (
-    <div className={`relative bg-transparent ${className}`}>
+    <div className={`relative bg-transparent portrait-float ${className}`}>
       {src ? (
         // User-uploaded portraits live in /public/uploads and change over time.
         // eslint-disable-next-line @next/next/no-img-element
