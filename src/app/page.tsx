@@ -48,10 +48,10 @@ export default async function HomePage() {
           </div>
           <p className="rise rise-4 mt-5 max-w-xl text-base leading-7 text-[var(--muted)] md:text-lg">
             Click{" "}
-            <a href="/about" className="font-medium text-[var(--brass-deep)] underline decoration-[var(--brass)] underline-offset-4">
+            <a href="/about" className="font-medium text-[#2f6f8f] underline decoration-[#2f6f8f] underline-offset-4">
               here
             </a>{" "}
-            to learn a little more about me.
+            to learn a little more about me!
           </p>
         </div>
         <div className="order-1 mx-auto w-full min-w-0 max-w-[13.5rem] sm:max-w-xs md:order-2 md:max-w-sm">
