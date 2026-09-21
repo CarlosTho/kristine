@@ -20,9 +20,17 @@ export default async function StudioLayout({
   return (
     <div>
       <div className="border-b border-[var(--line)] bg-[var(--navy)] text-[var(--cream)]">
-        <SiteShell className="flex flex-wrap items-center justify-between gap-3 py-3 text-sm">
-          <p className="tracking-[0.18em] uppercase text-xs">Studio</p>
-          <nav className="flex flex-wrap items-center gap-3 md:gap-4">
+        <SiteShell className="flex flex-col gap-3 py-3 text-sm sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+          <div className="flex items-center justify-between gap-3">
+            <Link
+              href="/"
+              className="btn rounded-full border border-white/30 px-4 py-2 text-xs no-underline"
+            >
+              ← Blog
+            </Link>
+            <p className="tracking-[0.18em] uppercase text-xs opacity-80">Studio</p>
+          </div>
+          <nav className="flex flex-wrap items-center gap-x-4 gap-y-2 md:gap-4">
             <Link href="/admin" className="no-underline opacity-90 hover:opacity-100">
               Posts
             </Link>
