@@ -18,7 +18,7 @@ export default async function LoginPage() {
         <p className="kicker">Studio</p>
         <h1 className="mt-3 font-display text-4xl">Sign in</h1>
         <p className="mt-3 text-[var(--muted)]">
-          Made for: Kristine-Huaman (my lovely gf) &lt;3
+          Made for: Kristine (aka chikis) my gf &lt;3.
         </p>
         <LoginForm />
       </div>

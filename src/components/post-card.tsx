@@ -28,8 +28,9 @@ export function PostCard({
             {post.category} · {date}
           </p>
           <h2 className="mt-1 font-display text-xl leading-tight break-words sm:text-2xl">{post.title}</h2>
+          <span className="read-cue mt-3 inline-flex whitespace-nowrap sm:hidden">Read more →</span>
         </div>
-        <span className="read-cue mt-0 hidden sm:inline-flex">Read</span>
+        <span className="read-cue mt-0 hidden whitespace-nowrap sm:inline-flex">Read more →</span>
       </Link>
     );
   }
@@ -55,7 +56,7 @@ export function PostCard({
         </p>
         <h2 className="mt-2 font-display text-2xl leading-[0.95] italic break-words md:mt-3 md:text-4xl">{post.title}</h2>
         <p className="mt-3 leading-7 break-words [overflow-wrap:anywhere] text-[var(--muted)] md:mt-4">{post.excerpt}</p>
-        <span className="read-cue">Read more →</span>
+        <span className="read-cue inline-flex whitespace-nowrap">Read more →</span>
       </div>
     </Link>
   );
