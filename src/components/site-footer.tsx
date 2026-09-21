@@ -83,27 +83,11 @@ export function SiteFooter({
       )}
       <p className="mt-4 flex flex-wrap items-center justify-between gap-3">
         <span>© 2026 {name}</span>
-        <span className="flex items-center gap-4">
-          <a href="/about" className="text-xs tracking-[0.14em] uppercase no-underline opacity-60 hover:opacity-100">
-            About me
+        {isAdmin ? (
+          <a href="/admin" className="text-xs tracking-[0.14em] uppercase no-underline opacity-60 hover:opacity-100">
+            Dashboard
           </a>
-          <a href="/rss.xml" className="text-xs tracking-[0.14em] uppercase no-underline opacity-60 hover:opacity-100">
-            RSS
-          </a>
-          <a
-            href="https://www.linkedin.com/in/kristine-huaman/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs tracking-[0.14em] uppercase no-underline opacity-60 hover:opacity-100"
-          >
-            LinkedIn
-          </a>
-          {isAdmin ? (
-            <a href="/admin" className="text-xs tracking-[0.14em] uppercase no-underline opacity-60 hover:opacity-100">
-              Dashboard
-            </a>
-          ) : null}
-        </span>
+        ) : null}
       </p>
     </SiteShell>
   );
