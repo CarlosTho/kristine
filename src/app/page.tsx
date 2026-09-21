@@ -47,18 +47,12 @@ export default async function HomePage() {
             </a>
           </div>
         </div>
-        <div className="order-1 mx-auto w-full min-w-0 max-w-[13.5rem] overflow-hidden sm:max-w-xs md:order-2 md:max-w-sm">
-          <div className="relative">
-            <div
-              aria-hidden="true"
-              className="absolute inset-[0.85rem_-0.55rem_-0.85rem_0.55rem] rotate-2 rounded-[1.2rem] bg-[var(--brass)] md:inset-[1.15rem_-1rem_-1.15rem_1rem] md:rotate-3 md:rounded-[1.35rem]"
-            />
-            <Portrait
-              src={site.portraitPath}
-              name={site.displayName}
-              className="relative aspect-[4/5] w-full md:-rotate-1"
-            />
-          </div>
+        <div className="order-1 mx-auto w-full min-w-0 max-w-[13.5rem] sm:max-w-xs md:order-2 md:max-w-sm">
+          <Portrait
+            src={site.portraitPath}
+            name={site.displayName}
+            className="relative aspect-[4/5] w-full"
+          />
         </div>
       </section>
 
