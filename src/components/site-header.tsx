@@ -12,20 +12,17 @@ export function SiteHeader({ name, isAdmin }: { name: string; isAdmin: boolean }
       <SiteShell className="flex min-w-0 items-center justify-between gap-2 py-3 md:gap-6 md:py-4">
         <Link href="/" className="brand-mark min-w-0 no-underline leading-none">
           <p className="kicker mb-0.5">Blog</p>
-          <span className="block truncate font-display text-xl italic tracking-tight sm:text-2xl md:text-3xl">
+          <span className="block whitespace-nowrap font-display text-[1.05rem] italic tracking-tight sm:text-2xl md:text-3xl">
             {name}
           </span>
         </Link>
-        <nav className="flex shrink-0 items-center justify-end gap-3 text-sm md:gap-6 md:text-base" aria-label="Primary">
-          <Link href="/" className="nav-link" aria-current={pathname === "/" ? "page" : undefined}>
-            Blog
-          </Link>
+        <nav className="flex shrink-0 items-center justify-end gap-2.5 md:gap-6" aria-label="Primary">
           <Link
-            href="/about"
-            className="nav-link"
-            aria-current={pathname === "/about" ? "page" : undefined}
+            href="/"
+            className="nav-link !text-[var(--brass-deep)] !opacity-95"
+            aria-current={pathname === "/" ? "page" : undefined}
           >
-            About
+            Home
           </Link>
           {isAdmin ? (
             <Link

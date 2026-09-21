@@ -85,7 +85,7 @@ export function SiteFooter({
         <span>© 2026 {name}</span>
         <span className="flex items-center gap-4">
           <a href="/about" className="text-xs tracking-[0.14em] uppercase no-underline opacity-60 hover:opacity-100">
-            About
+            About me
           </a>
           <a href="/rss.xml" className="text-xs tracking-[0.14em] uppercase no-underline opacity-60 hover:opacity-100">
             RSS
